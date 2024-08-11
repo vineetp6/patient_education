@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Education</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Patient Education</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#medicines">Medicines</a></li>
+                <li><a href="#tools">Interactive Tools</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home">
+            <h2>Welcome to Patient Education</h2>
+            <p>Your source for reliable health information.</p>
+        </section>
+        
+        <section id="medicines">
+            <h2>Medicines</h2>
+            <form id="search-form" method="get" action="/search">
+                <input type="text" name="query" placeholder="Search for medicines...">
+                <button type="submit">Search</button>
+            </form>
+            <div id="medicines-container">
+                {% for medicine in medicines %}
+                <div class="medicine">
+                    <h3><a href="#" class="search-link" data-query="{{ medicine[1] }}">{{ medicine[1] }}</a></h3>
+                    <p><strong>Indication:</strong> <a href="#" class="search-link" data-query="{{ medicine[2] }}">{{ medicine[2] }}</a></p>
+                    <p><strong>Systemic:</strong> <a href="#" class="search-link" data-query="{{ medicine[3] }}">{{ medicine[3] }}</a></p>
+                    <p><strong>Company Name:</strong> <a href="#" class="search-link" data-query="{{ medicine[4] }}">{{ medicine[4] }}</a></p>
+                    <p><strong>Indication Generic Index:</strong> <a href="#" class="search-link" data-query="{{ medicine[5] }}">{{ medicine[5] }}</a></p>
+                    <p><strong>Therapitic:</strong> <a href="#" class="search-link" data-query="{{ medicine[6] }}">{{ medicine[6] }}</a></p>
+                    <p><strong>Generic:</strong> <a href="#" class="search-link" data-query="{{ medicine[7] }}">{{ medicine[7] }}</a></p>
+                    <p><strong>Pregnancy Category:</strong> <a href="#" class="search-link" data-query="{{ medicine[8] }}">{{ medicine[8] }}</a></p>
+                    <p><strong>Therapitic Generic:</strong> <a href="#" class="search-link" data-query="{{ medicine[9] }}">{{ medicine[9] }}</a></p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+        <section id="tools">
+            <h2>Interactive Tools</h2>
+            <div id="bmi-calculator">
+                <h3>BMI Calculator</h3>
+                <form>
+                    <label for="height">Height (cm):</label>
+                    <input type="number" id="height" name="height">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" id="weight" name="weight">
+                    <button type="button" onclick="calculateBMI()">Calculate</button>
+                </form>
+                <p id="bmi-result"></p>
+            </div>
+            <div id="calorie-calculator">
+                <h3>Calorie Calculator</h3>
+                <form>
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <label for="activity-level">Activity Level:</label>
+                    <select id="activity-level" name="activity-level">
+                        <option value="sedentary">Sedentary</option>
+                        <option value="light">Light</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="active">Active</option>
+                    </select>
+                    <button type="button" onclick="calculateCalories()">Calculate</button>
+                </form>
+                <p id="calories-result"></p>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Info</h2>
+            <p>If you have any questions or need further information, please contact us:</p>
+            <ul>
+                <li>Email: info@patienteducation.com</li>
+                <li>Phone: (123) 456-7890</li>
+                <li>Address: 123 Health St, Wellness City, HW 12345</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Patient Education</p>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

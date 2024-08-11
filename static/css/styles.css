@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+#search-form {
+    margin-bottom: 20px;
+}
+
+#search-form input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#search-form button {
+    padding: 10px;
+}
+
+#medicines-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.medicine {
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: calc(33.333% - 40px);
+    box-sizing: border-box;
+}
+
+.medicine h3 {
+    margin-top: 0;
+}
+
+.medicine p {
+    margin: 10px 0;
+}
+
+.medicine a {
+    color: #333;
+    text-decoration: none;
+}
+
+.medicine a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#tools {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
